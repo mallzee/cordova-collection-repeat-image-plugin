@@ -1,7 +1,10 @@
 <?xml version='1.0' encoding='utf-8'?>
 <plugin id="com.mallzee.collectionrepeatimage" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
 	<name>CollectionRepeatImage</name>
-	<description>Offloads image scaling to a thread queue</description>
+	<description>Offloads image scaling to a background thread to releave pressure on the JavaScript thread</description>
+	<author>Mallzee</author>
+	<license>MIT</license>
+	<keywords>image,collection,repeat,sdwebimage,webimage</keywords>
 	<js-module name="CollectionRepeatImage" src="www/CollectionRepeatImage.js">
 		<clobbers target="window.CollectionRepeatImage"/>
 	</js-module>
