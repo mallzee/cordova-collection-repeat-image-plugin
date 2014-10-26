@@ -8,7 +8,7 @@ This plugin offloads the image processing to native land to download the image a
 
 It's essentially a wrapper around SDWebImage optimised to work with Ionic's collection repeat
 
-```
+```JavaScript
 var rect = image.getBoundingClientRect();
 
 var options = {
@@ -42,7 +42,7 @@ cordova.plugins.CollectionRepeatImage.getImage(options, function (data) {
 
 - url: The url for the specified image
 - index: The index associated with this image. Used to cancel jobs when items have gone out of view
-- quality: [0 - 1] The compression applied to the image. I find 0.6 a nice trade off
+- quality: [0 - 1] The compression applied to the image. 
 - scale: The image magic format "[width]x[height]" See [here](https://github.com/mustangostang/UIImage-ResizeMagick) for more variations
 
 
@@ -50,7 +50,7 @@ cordova.plugins.CollectionRepeatImage.getImage(options, function (data) {
 
 Example of the markup inside of a collection repeat.
 
-```
+```HTML
 <div class="product-multi" collection-repeat="product in products track by product.id" collection-item-width="'50%'" collection-item-height="'50%'">
     <mlz-img src="{{product.image}}" id="{{$id}}"></mlz-img>
     <div class="price"{{product.cost}}</div>
@@ -60,7 +60,7 @@ Example of the markup inside of a collection repeat.
 
 Example directive to make use of the plugin.
 
-```
+```JavaScript
 angular.directive('mlzImg', [function () {
   return {
     restrict: 'E',
@@ -140,7 +140,7 @@ angular.directive('mlzImg', [function () {
 
 Cancel all operations on a scope destroy
 
-```
+```JavaScript
 $scope.$on('destroy', function () {
   if(ionic.Platform.isWebView()) {
     cordova.plugins.CollectionRepeatImage.cancelAll()
