@@ -15,7 +15,6 @@
 // When we get the image. Scale it to the size that we asked for
 -(UIImage *)imageManager:(SDWebImageManager *)imageManager transformDownloadedImage:(UIImage *)image withURL:(NSURL *)imageURL
 {
-    NSLog(@"%@", [options objectForKey:@"scale"]);
     return [image resizedImageByMagick:[options objectForKey:@"scale"]];
 }
 
@@ -63,7 +62,6 @@
     if (index) {
         NSOperation *job = [indexes objectForKey:index];
         if (job) {
-            NSLog(@"Cancelling job at index %@", index);
             [job cancel];
         }
     }
