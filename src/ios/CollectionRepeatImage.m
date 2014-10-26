@@ -31,7 +31,7 @@
     }];
 
     // Set off a download job
-    NSOperation *job = [manager downloadImageWithURL:[options objectForKey:@"data"] options:SDWebImageCacheMemoryOnly progress:^(NSInteger receivedSize, NSInteger expectedSize)
+    NSOperation *job = [manager downloadImageWithURL:[options objectForKey:@"data"] options:[[options objectForKey:@"downloadOptions"] integerValue] progress:^(NSInteger receivedSize, NSInteger expectedSize)
     {
         // TODO: create a callback so we can have a process update in web land
     }

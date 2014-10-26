@@ -3,7 +3,10 @@
 	<name>CollectionRepeatImage</name>
 	<description>Offloads image scaling to a thread queue</description>
 	<js-module name="CollectionRepeatImage" src="www/CollectionRepeatImage.js">
-		<clobbers target="cordova.plugins.CollectionRepeatImage"/>
+		<clobbers target="window.CollectionRepeatImage"/>
+	</js-module>
+	<js-module name="CollectionRepeatImageOptions" src="www/CollectionRepeatImageOptions.js">
+		<clobbers target="window.CollectionRepeatImageOptions"/>
 	</js-module>
 	<platform name="ios">
 		<config-file parent="/*" target="config.xml">
