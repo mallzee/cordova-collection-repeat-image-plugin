@@ -40,7 +40,7 @@
         if (image)
         {
         	// If we have an image. Switch it to a base64 image and send it back to web land to be injected
-            NSString *base64Image = [UIImageJPEGRepresentation(image, [options objectForKey:@"quality"]) base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
+            NSString *base64Image = [UIImageJPEGRepresentation(image, [[options objectForKey:@"quality"] floatValue]) base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
 
             CDVPluginResult *pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:base64Image];
             [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
