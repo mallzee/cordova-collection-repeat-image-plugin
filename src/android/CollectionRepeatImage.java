@@ -10,19 +10,19 @@ import org.json.JSONObject;
 /**
  * This class echoes a string called from JavaScript.
  */
-public class CDVCollectionRepeatImage extends CordovaPlugin {
+public class CollectionRepeatImage extends CordovaPlugin {
 
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
-        if (action.equals("coolMethod")) {
+        if (action.equals("getImage")) {
             String message = args.getString(0);
-            this.coolMethod(message, callbackContext);
+            this.getImage(message, callbackContext);
             return true;
         }
         return false;
     }
 
-    private void coolMethod(String message, CallbackContext callbackContext) {
+    private void getImage(String message, CallbackContext callbackContext) {
         if (message != null && message.length() > 0) {
             callbackContext.success(message);
         } else {
