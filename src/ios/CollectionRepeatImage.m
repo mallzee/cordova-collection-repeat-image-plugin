@@ -25,8 +25,11 @@
     NSString *index = [options objectForKey:@"index"];
 
     // Setup the cache key so it considereds the scale asked for as well as the URL
+    __weak __typeof(self) weakSelf = self;
     [manager setCacheKeyFilter:^(NSURL *url) {
-        return [NSString stringWithFormat:@"%@-%@", [url absoluteString], [options objectForKey:@"scale"]];
+        // Crazy referencing to stop seg faults when threaded
+        __strong __typeof(self) strongSelf = weakSelf;
+        return [NSString stringWithFormat:@"%@-%@", [url absoluteString], [strongSelf->options objectForKey:@"scale"]];
     }];
 
     // Set off a download job
